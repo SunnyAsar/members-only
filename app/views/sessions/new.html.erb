@@ -1,11 +1,16 @@
 <h1>Sign In</h1>
 
-<%= form_for(:sessions, url: signin_path) do |f|%>
+<%= form_for(:session, url: signin_path) do |f|%>
 <%= f.label :email%>
 <%= f.email_field :email%>
 
 <%= f.label :password%>
 <%= f.password_field :password%>
+
+<%= f.label :remember_me do %>
+  <%= f.check_box :remember_me %>
+  <span>Remember me on this computer</span>
+<% end %>
 
 <%= f.submit "SignIn" %>
 

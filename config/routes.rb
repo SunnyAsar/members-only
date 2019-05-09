@@ -1,8 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-
-
-  get 'sessions/new'
+  root to: 'users#index'
   get '/signin', to: 'sessions#new'
-  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post '/signin', to: 'sessions#create'
+  delete '/signout', to: 'sessions#destroy'
 end
